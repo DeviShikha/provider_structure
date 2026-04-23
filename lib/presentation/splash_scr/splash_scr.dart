@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_structure/presentation/splash_scr/splash_provider.dart';
 
-import '../screens/home_screen.dart';
-
 class SplashScr extends StatelessWidget {
   const SplashScr({super.key});
 
