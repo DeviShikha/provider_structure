@@ -7,8 +7,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final counter = Provider.of<CounterProvider>(context);
-    // final flavor = FlavorConfig.instance;
 
     return Scaffold(
       appBar: AppBar(
@@ -19,24 +17,12 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Container(
-            //   padding: const EdgeInsets.all(16),
-            //   decoration: BoxDecoration(
-            //     color: flavor.name == Flavor.dev ? Colors.orange.withOpacity(0.2) : Colors.green.withOpacity(0.2),
-            //     borderRadius: BorderRadius.circular(8),
-            //   ),
-            //   child: Text(
-            //     'Environment: ${flavor.name}\nBase URL: ${flavor.values["baseUrl"]}',
-            //     textAlign: TextAlign.center,
-            //     style: const TextStyle(fontWeight: FontWeight.bold),
-            //   ),
-            // ),
-            // const SizedBox(height: 30),
+
             const Text(
               'You have pushed the button this many times:',
             ),
             Text(
-              '${counter.count}',
+              context.watch<CounterProvider>().count.toString(),
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 20),
@@ -44,12 +30,12 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: counter.decrement,
+                  onPressed: context.read<CounterProvider>().decrement,
                   child: const Icon(Icons.remove),
                 ),
                 const SizedBox(width: 20),
                 ElevatedButton(
-                  onPressed: counter.increment,
+                  onPressed:  context.read<CounterProvider>().increment,
                   child: const Icon(Icons.add),
                 ),
               ],
