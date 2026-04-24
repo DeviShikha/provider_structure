@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         //// changeNotifierProvider
         ChangeNotifierProvider(create: (_) => Changenotifire()),
         //// futureProvider
-        FutureProvider(create: (_) => fetchData(), initialData: 'Loading...'),
+        FutureProvider<String?>(create: (_) => fetchData(), initialData: 'Loading...'),
         //// streamProvider
         StreamProvider<int?>(create: (_) => counterStream(), initialData: 0),
         //// valueProvider
