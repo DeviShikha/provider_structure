@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import '../ListenableProvider/h_screen.dart';
 
-import '../screens/home_screen.dart';
-
-class SplashProvider extends ChangeNotifier {
+class SplashProvider {
   bool _isLoading = true;
 
   bool get isLoading => _isLoading;
@@ -10,9 +9,8 @@ class SplashProvider extends ChangeNotifier {
   Future<void> initializeApp(BuildContext context) async {
     await Future.delayed(const Duration(seconds: 3));
     _isLoading = false;
-    notifyListeners();
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => HomeScreen()),
+      MaterialPageRoute(builder: (_) => MyHomeScreen()),
     );
   }
 }

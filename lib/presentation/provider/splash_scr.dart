@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_structure/presentation/splash_scr/splash_provider.dart';
+import 'package:provider_structure/presentation/provider/splash_provider.dart';
 
 class SplashScr extends StatelessWidget {
   const SplashScr({super.key});
