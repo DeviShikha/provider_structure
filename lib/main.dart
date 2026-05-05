@@ -6,8 +6,8 @@ import 'package:provider_structure/presentation/ListenableProvider/h_provider.da
 import 'package:provider_structure/presentation/StreamProvider/stream_provider.dart';
 import 'package:provider_structure/presentation/ValueListenableProvider/valueList_provider.dart';
 import 'package:provider_structure/presentation/provider/splash_provider.dart';
-import 'package:provider_structure/presentation/provider/splash_scr.dart';
 import 'package:provider_structure/presentation/ChangeNotifierProvider/changenotifire_provider.dart';
+import 'package:provider_structure/presentation/provider/splash_scr.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
         //// changeNotifierProvider
         ChangeNotifierProvider(create: (_) => Changenotifire()),
         //// futureProvider
-        FutureProvider<String?>(create: (_) => fetchData(), initialData: 'Loading...'),
+        FutureProvider<String?>(
+          create: (_) => fetchData(),
+          initialData: 'Loading...',
+        ),
         //// streamProvider
         StreamProvider<int?>(create: (_) => counterStream(), initialData: 0),
         //// valueProvider
@@ -35,8 +38,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        // home:  PackFanScreen(),
         home: SplashScr(),
-        // home: MySplaceScreen(),
       ),
     );
   }
